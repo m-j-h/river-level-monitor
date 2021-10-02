@@ -1,7 +1,10 @@
 SOURCES = \
 src/jsoncontexthandler.cpp \
 src/jsoncontextmanager.cpp \
-src/jsonprocessor.cpp
+src/jsonprocessor.cpp \
+src/readingsdocumentjsoncontexthandler.cpp \
+src/readingsitemsjsoncontexthandler.cpp \
+src/readingjsoncontexthandler.cpp
 
 TEST_SOURCES = \
 test/main.cpp
