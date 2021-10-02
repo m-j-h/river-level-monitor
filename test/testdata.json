@@ -1,0 +1,15 @@
+{
+	"metadata" : {
+		"meta-data-key-one" : "meta-data-value-one",
+		"meta-data-key-two" : "meta-data-value-two"
+	},
+	"items" : [ {
+			"id"    : "item-1-name",
+			"value" : "item-1-value"
+		},
+		{
+			"id"    : "item-2-name",
+			"value" : "item-2-value"			
+		}
+	]
+}
