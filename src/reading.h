@@ -13,7 +13,7 @@ public:
 			 const std::string& timeStamp);
 			 
 	std::string ToString() const;
-	
+
 private:
 	std::string m_id;
 	std::string m_measure;

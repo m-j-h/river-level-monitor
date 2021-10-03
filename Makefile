@@ -4,7 +4,8 @@ src/jsoncontextmanager.cpp \
 src/jsonprocessor.cpp \
 src/readingsdocumentjsoncontexthandler.cpp \
 src/readingsitemsjsoncontexthandler.cpp \
-src/reading.cpp
+src/reading.cpp \
+src/readingrepository.cpp 
 
 TEST_SOURCES = \
 test/main.cpp

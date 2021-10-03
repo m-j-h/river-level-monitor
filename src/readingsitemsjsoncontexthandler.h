@@ -2,11 +2,12 @@
 
 #include <string>
 #include "jsoncontexthandler.h"
+#include "readingrepository.h"
 
 class ReadingsJSONItemsContextHandler : public JSONContextHandler
 {
 public:
-	ReadingsJSONItemsContextHandler();
+	explicit ReadingsJSONItemsContextHandler(const ReadingRepository::Ptr& readingRepository);
 	virtual ~ReadingsJSONItemsContextHandler();
 	
 	virtual JSONContextHandler::Ptr StartObject(const std::string& name);
@@ -17,4 +18,5 @@ private:
 	std::string m_id;
 	std::string m_measure;
 	std::string m_timeStamp;
+	ReadingRepository::Ptr m_readingRepository;
 };

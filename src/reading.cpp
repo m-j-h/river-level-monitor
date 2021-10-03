@@ -10,5 +10,8 @@ Reading::Reading( 	const std::string& id,
 
 std::string Reading::ToString() const
 {
-	return m_id;
+	return 
+		"id        : " + m_id +
+		"\nmeasure   : " + m_measure +
+		"\ntimeStamp : " + m_timeStamp;
 }

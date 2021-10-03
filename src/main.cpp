@@ -2,6 +2,7 @@
 #include <iostream>
 #include "jsonprocessor.h"
 #include "readingsdocumentjsoncontexthandler.h"
+#include "readingrepository.h"
 
 int main(int argc, char** argv)
 {
@@ -12,8 +13,10 @@ int main(int argc, char** argv)
     }
     
     const std::string dataFile(argv[1]);
-    JSONContextHandler::Ptr readings( new ReadingsDocumentJSONContextHandler() );
+    ReadingRepository::Ptr readingRepository( new ReadingRepository() );
+    JSONContextHandler::Ptr readings( new ReadingsDocumentJSONContextHandler(readingRepository) );
     JSONProcessor jsonProcessor;
-    jsonProcessor.Process(dataFile, readings);    
+    jsonProcessor.Process(dataFile, readings);
+    readingRepository->Dump();
     return EXIT_SUCCESS;
 }

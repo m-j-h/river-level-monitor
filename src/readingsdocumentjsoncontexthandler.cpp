@@ -1,8 +1,9 @@
 #include "readingsdocumentjsoncontexthandler.h"
 #include "readingsitemsjsoncontexthandler.h"
 
-ReadingsDocumentJSONContextHandler::ReadingsDocumentJSONContextHandler()
-: JSONContextHandler()
+ReadingsDocumentJSONContextHandler::ReadingsDocumentJSONContextHandler(const ReadingRepository::Ptr& readings)
+: JSONContextHandler(),
+  m_readings(readings)
 {}
 
 ReadingsDocumentJSONContextHandler::~ReadingsDocumentJSONContextHandler()
@@ -12,7 +13,7 @@ JSONContextHandler::Ptr ReadingsDocumentJSONContextHandler::StartArray(const std
 {
 	if( name == "items" )
 	{
-		return JSONContextHandler::Ptr( new ReadingsJSONItemsContextHandler() );
+		return JSONContextHandler::Ptr( new ReadingsJSONItemsContextHandler(m_readings) );
 	}
 	return shared_from_this();
 }

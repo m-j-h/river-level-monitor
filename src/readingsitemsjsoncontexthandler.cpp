@@ -1,10 +1,11 @@
 #include "readingsitemsjsoncontexthandler.h"
 #include <iostream>
 
-ReadingsJSONItemsContextHandler::ReadingsJSONItemsContextHandler()
+ReadingsJSONItemsContextHandler::ReadingsJSONItemsContextHandler(const ReadingRepository::Ptr& readingRepository)
 : m_id(),
   m_measure(),
-  m_timeStamp()
+  m_timeStamp(),
+  m_readingRepository(readingRepository)
 {}
 
 ReadingsJSONItemsContextHandler::~ReadingsJSONItemsContextHandler()
@@ -20,10 +21,8 @@ JSONContextHandler::Ptr ReadingsJSONItemsContextHandler::StartObject(const std::
 
 void ReadingsJSONItemsContextHandler::EndObject()
 {
-	std::cout << "id        : " << m_id << std::endl;
-	std::cout << "measure   : " << m_measure << std::endl;
-	std::cout << "timeStamp : " << m_timeStamp << std::endl;
-	std::cout << "------------" << std::endl;	
+	Reading::Ptr reading( new Reading(m_id, m_measure, m_timeStamp) );
+	m_readingRepository->Add(reading);
 }
 
 void ReadingsJSONItemsContextHandler::String(const std::string& key, const std::string& value)
