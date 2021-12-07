@@ -22,5 +22,5 @@ void ReadingRepository::Dump()
                     {
                         std::cout << reading->ToString() << std::endl;
                         std::cout << "--------" << std::endl;
-                    });	
+                    });
 }

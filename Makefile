@@ -5,7 +5,9 @@ src/jsonprocessor.cpp \
 src/readingsdocumentjsoncontexthandler.cpp \
 src/readingsitemsjsoncontexthandler.cpp \
 src/reading.cpp \
-src/readingrepository.cpp 
+src/readingrepository.cpp \
+src/filemonitor.cpp \
+src/filehandler.cpp
 
 TEST_SOURCES = \
 test/main.cpp
