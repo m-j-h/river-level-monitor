@@ -6,8 +6,8 @@
 class JSONProcessor
 {
 public:
-	JSONProcessor();
-	~JSONProcessor();
-	
-	void Process(const std::string& fileName, const JSONContextHandler::Ptr& handler);
+    JSONProcessor();
+    ~JSONProcessor();
+
+    void Process(const std::string& fileName, const JSONContextHandler::Ptr& handler);
 };

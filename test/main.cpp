@@ -13,7 +13,7 @@ int main()
 {
     const std::string dataFile( GetDataFilePath("testdata.json") );
     JSONProcessor jsonProcessor;
-    
+
     std::cout << "Opening file '" << dataFile << "'" << std::endl;
     DocumentHandler::Ptr document( new DocumentHandler() );
     jsonProcessor.Process(dataFile, document);

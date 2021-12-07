@@ -6,11 +6,11 @@
 class ReadingsDocumentJSONContextHandler : public JSONContextHandler
 {
 public:
-	explicit ReadingsDocumentJSONContextHandler(const ReadingRepository::Ptr& readings);
-	virtual ~ReadingsDocumentJSONContextHandler();
+    explicit ReadingsDocumentJSONContextHandler(const ReadingRepository::Ptr& readings);
+    virtual ~ReadingsDocumentJSONContextHandler();
 
-	virtual JSONContextHandler::Ptr StartArray(const std::string& name);
-	
+    virtual JSONContextHandler::Ptr StartArray(const std::string& name);
+
 private:
-	ReadingRepository::Ptr m_readings;
+    ReadingRepository::Ptr m_readings;
 };

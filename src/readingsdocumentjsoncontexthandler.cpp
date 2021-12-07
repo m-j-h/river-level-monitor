@@ -11,9 +11,9 @@ ReadingsDocumentJSONContextHandler::~ReadingsDocumentJSONContextHandler()
 
 JSONContextHandler::Ptr ReadingsDocumentJSONContextHandler::StartArray(const std::string& name)
 {
-	if( name == "items" )
-	{
-		return JSONContextHandler::Ptr( new ReadingsJSONItemsContextHandler(m_readings) );
-	}
-	return shared_from_this();
+    if( name == "items" )
+    {
+        return JSONContextHandler::Ptr( new ReadingsJSONItemsContextHandler(m_readings) );
+    }
+    return shared_from_this();
 }
