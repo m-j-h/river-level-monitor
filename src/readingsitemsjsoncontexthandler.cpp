@@ -5,7 +5,8 @@ ReadingsJSONItemsContextHandler::ReadingsJSONItemsContextHandler(const ReadingRe
 : m_id(),
   m_measure(),
   m_timeStamp(),
-  m_readingRepository(readingRepository)
+  m_readingRepository(readingRepository),
+  m_readingsAdded(0L)
 {}
 
 ReadingsJSONItemsContextHandler::~ReadingsJSONItemsContextHandler()
@@ -23,6 +24,7 @@ void ReadingsJSONItemsContextHandler::EndObject()
 {
     Reading::Ptr reading( new Reading(m_id, m_measure, m_timeStamp) );
     m_readingRepository->Add(reading);
+    m_readingsAdded++;
 }
 
 void ReadingsJSONItemsContextHandler::String(const std::string& key, const std::string& value)
@@ -39,4 +41,9 @@ void ReadingsJSONItemsContextHandler::String(const std::string& key, const std::
     {
         m_measure = value;
     }
+}
+
+unsigned long ReadingsJSONItemsContextHandler::ReadingsAdded() const
+{
+    return m_readingsAdded;
 }
